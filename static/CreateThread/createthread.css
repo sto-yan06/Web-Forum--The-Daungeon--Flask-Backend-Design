@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'PixelFont';
+  src: url(/static/ARCADECLASSIC.TTF);
+}
+
+body {
+  background-image: url("/static/restbackground.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'PixelFont', sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(66, 71, 64, 0.95);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 20px black;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-spacing: 20px;
+    color: orange;
+    text-shadow: 10px 8px 3px black;
+  }
+  
+  form {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'PixelFont', sans-serif;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    resize: vertical;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077FF;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 5px;
+    font-size: 20px;
+  }
+  
+  .button:hover {
+    background-color: #0055CC;
+  }
+
+.return-home a{
+  position: fixed;
+  text-decoration: none;
+  color: gold;
+  background-color: #0077FF;
+  width: 200px;
+  padding: 15px;
+  border-radius: 15px;
+  top:10px;
+  left: 15px;
+  font-size: 20px;
+  font-family: 'PixelFont', sans-serif;
+}
+
+select{
+  font-family: "PixelFont";
+  font-size: 20px;
+  word-spacing: 5px;
+}
+
+select option{
+  font-family: 'PixelFont';
+}

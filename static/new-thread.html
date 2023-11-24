@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Make a new post</title>
+  <link rel="stylesheet" type="text/css" href="/static/CreateThread/createthread.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+  
+  <div class="return-home">
+    <a href="/">Home</a>
+  </div>
+
+  <div class="container">
+    <h1>Create a New Thread</h1>
+    <form method="post" action="/forum/new-thread">
+      <label for="title">Thread Title:</label>
+      <input type="text" id="title" name="title" required>
+      <label for="content">Thread Content:</label>
+      <textarea id="content" name="content" rows="6" required></textarea>
+
+      <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <option value="general_discussion">General Discussion</option>
+        <option value="game_tips">Game Tips</option>
+        <!-- Add more category options if needed -->
+      </select>
+
+      <button type="submit" class="button">Create Thread</button>
+    </form>
+  </div>
+</body>
+</html>

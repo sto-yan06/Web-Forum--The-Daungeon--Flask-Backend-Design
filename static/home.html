@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/HomeTemplate/style.css">
+        <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Welcome to THE DAUNGEON</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+        <div class="dark-overlay">
+            <div class="gradient-circle"></div>
+            <div class = "centered-button">
+                <button id= "join-button" class="pixel-art-button">ENTER THE DAUNGEON</button>
+            </div>
+            <button id="audio-control-button">Start / Pause</button>
+
+            <input id="volume-range" type="range" min="0" max="1" step="0.05" value="1">
+            <audio id="background-audio" loop autoplay>
+                <source src="/static/background-audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+ 
+        <script src="/static/HomeTemplate/scripts.js"></script>
+    </body>
+</html>

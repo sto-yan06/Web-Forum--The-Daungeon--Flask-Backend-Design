@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Here Adventurer</title>
+    <link rel="stylesheet" href="/static/AfterLoginMainPage/afterloginmainpage.css"> <!-- Link to your forum's CSS file -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+    <a href="/forum">
+        <header>
+            <h1>Adventurers</h1>
+        </header>
+    </a>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="forum/profile">Profile</a></li>
+
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Your forum content goes here -->
+
+        <section class="category-2">
+            <a href="/forum/new-thread" class="button">Create a new thread</a>
+        </section>
+
+        <!-- Category 1 -->
+        <section class="category">
+            <h2>General Discussion</h2>
+            <ul class="topic-list">
+                {% for thread in threads %}
+                <li>
+                    <h3><a href="/forum/topic/general/{{ thread[0] }}">{{ thread[1] }}</a></h3>
+                    <p>Content: {{ thread[2][:100] }}{% if thread[2]|length > 50 %}...{% endif %}</p>
+                    <p>Author: {{ thread[3] }} | Created at: {{ thread[4].strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="pagination">
+                {% if current_page > 1 %}
+                    <a href="/forum?page={{ current_page - 1 }}">Previous Page</a>
+                {% endif %}
+                {% if current_page < thread_total_pages %}
+                    <a href="/forum?page={{ current_page + 1 }}">Next Page</a>
+                {% endif %}
+            </div>
+
+        </section>
+
+        <!-- Category 2 -->
+        <section class="category">
+            <h2>Game Tips</h2>
+            <ul class="topic-list">
+                {% for thread in game_tips_threads %}
+                <li>
+                    <h3><a href="/forum/topic/game_tips/{{ thread[0] }}">{{ thread[1] }}</a></h3>
+                    <p>Content: {{ thread[2][:100] }}{% if thread[2]|length > 50 %}...{% endif %}</p>
+                    <p>Author: {{ thread[3] }} | Created at: {{ thread[4].strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="pagination">
+                {% if current_page_gt > 1 %}
+                    <a href="/forum?page_gt={{ current_page_gt - 1 }}">Previous Page</a>
+                {% endif %}
+                {% if current_page_gt < game_tips_total_pages %}
+                    <a href="/forum?page_gt={{ current_page_gt + 1 }}">Next Page</a>
+                {% endif %}
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Stojanis the Creator</p>
+    </footer>
+
+    <script src="/static/AfterLoginMainPage/afterloginmainpage.js"></script> <!-- Link to your forum's JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Adventurer Profile</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/user-profile/user-profile.css">
+        <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    </head>
+    <body>
+        <nav>
+            <a href="/forum">Home</a>
+
+            {% if role == "admin"%}
+            <a href= "/admin-page/dashboard">Admin Settings</a>
+            {% endif %}
+
+            <a href="/forum/new-thread">Create Thread</a>
+
+        </nav>
+<div class="containerr">
+    <div class="wanted-picture">
+        
+        <div class="profile-settings">
+            <p>Hello {{username}}</p>
+            <p>Your current role is: {{role}}</p>
+        </div>
+
+
+        <div class="profile-picture">
+            <div class="avatar-container">
+            {% if profile_pic %}
+            <img src = "{{profile_pic}}" alt = "Profile Picture">
+            {% else %}
+            <img src ="/static/background.jpg" alt="Default Picture">
+            {% endif %}
+            </div>
+            <h2>{{ username }}</h2>
+        </div>
+
+        <div class="profile-pic-upload">
+            <form action="/upload-profile-pic" method="post" enctype="multipart/form-data">
+                <input type="file" name="profilePic" id="fileInput">
+                <label for="fileInput">
+                    <span>Select Profile Picture</span>
+                </label>
+                <input type="submit" class="upload-button" value="Upload">
+            </form>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="own-threads">
+            <div class="pagination1">
+            <ul class="thread-list">
+                {% for thread in main_threads %}
+                <li class="thread-list-ordonated"> 
+                    <p class="thread-list-item-text1"> {{thread[0]}} </p>
+                    <a href="/forum/topic/general/{{thread[0]}}" class="thread-list-item-text2"> {{thread[1]}} </a>
+                    <p class="thread-list-item-text3"> {{thread[2].strftime('%Y-%m-%d')}} </p>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="pagination_gd">
+                {% if current_page_for_gd > 1 %}
+                    <a href="/forum/profile?page_gd={{ current_page_for_gd - 1 }}" class="prev">Previous Page</a>
+                {% endif %}
+                {% if current_page_for_gd < total_pages_for_gd %}
+                    <a href="/forum/profile?page_gd={{ current_page_for_gd + 1 }}" class="next">Next Page</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="pagination2">
+            <ul class="tips-thread-list">
+                {% for thread in gametips_thread %}
+                <li class="tips-thread-list-ordonated"> 
+                    <p class="tips-thread-list-item-text1"> {{thread[0]}} </p>
+                    <a href="/forum/topic/game_tips/{{thread[0]}}" class="tips-thread-list-item-text2"> {{thread[1]}} </a>
+                    <p class="tips-thread-list-item-text3"> {{thread[2].strftime('%Y-%m-%d')}} </p>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <div class="pagination_gt">
+                {% if current_page_for_gt > 1 %}
+                    <a href="/forum/profile?page_gt={{ current_page_for_gt - 1 }}" class="prev">Previous Page</a>
+                {% endif %}
+                {% if current_page_for_gt < total_pages_for_gt %}
+                    <a href="/forum/profile?page_gt={{ current_page_for_gt + 1 }}" class="next">Next Page</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+    </div>
+</div>
+        </body>
+        
+
+        <script src="/static/user-profile/user-profile.js"></script>
+    </body>
+</html>

@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url(/static/ARCADECLASSIC.TTF);
+}
+
+body {
+    
+    background-image: url("/static/background.jpg");
+    background-repeat: repeat-y;
+    background-clip: border-box;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.dark-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.gradient-circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--x) var(--y), transparent 10%, rgba(0, 0, 0, 0.95));
+    pointer-events: none;
+    z-index: 0; /* Ensure the gradient circle is behind the buttons */
+}
+
+
+#volume-range{
+    width: 5%;
+    appearance: none;
+    height: 10px;
+    background: #ddd;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+
+}
+
+#volume-range::-webkit-slider-thumb{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: rgb(107, 71, 16);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#audio-control-button {
+
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(107, 71, 16);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Position the button absolutely */
+    bottom: 10px; /* Adjust the position from the bottom */
+    right: 130px; /* Adjust the position from the right */
+    z-index: 2; /* Ensure the audio control button appears above the overlay and circle */
+}
+
+#audio-contorl-button:hover{
+    background-color: rgb(107, 71, 16);
+}
+
+/*RPG BUTTON*/
+
+.centered-button{
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.pixel-art-button{
+    background-color: rgb(107, 71, 16);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'PixelFont', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.pixel-art-button::before,
+.pixel-art-button::after {
+    position:relative;
+    top: 4px;
+    font-size: 14px;
+}
+
+.pixel-art-button::before {
+    left: 0;
+}
+
+.pixel-art-button::after {
+    right: 0;
+}
+
+@media (max-widht:768px) {
+    
+    body{
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #volume-range{
+        width: 80%;
+        height: 5px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    #volume-range::-webkit-slider-thumb{
+        width: 8px 16px;
+        height: 16px;
+    }
+
+    #audio-control-button{
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+}

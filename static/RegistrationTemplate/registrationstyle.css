@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url(/static/ARCADECLASSIC.TTF);
+}
+
+body{
+    background-image: url("/static/RegistrationTemplate/backgroundreg.jpg");
+    background-clip: border-box;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: relative;
+}
+
+h1{
+    color: wheat;
+    position: fixed;
+    font-family: 'PixelFont', sans-serif;
+    font-style: normal;
+    word-spacing: 10px;
+    top: 0;
+}
+
+
+.registration-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    box-shadow: 20px;
+    width: 60%;
+    position: relative;
+    height: 80vh;
+    left: 120px;
+}
+
+.registration-form h2 {
+    font-family: 'PixelFont', sans-serif; 
+    font-size: 14px;
+    font-style: italic;
+}
+
+
+.registration-form input, .registration-form select, .registration-form textarea, .registration-form button {
+    font-family: 'PixelFont', sans-serif; 
+    font-size: 15px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffffff9c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 20px;
+    word-spacing: 5px;
+    
+}
+.registration-form label{
+    position: relative;
+    font-family: 'PixelFont', sans-serif; 
+    font-size: 15px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffffff9c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 20px;
+    word-spacing: 5px;
+    right: 230px;
+    top: 48px;
+
+}
+
+#login-button{
+    position: relative;
+    background-color: darkgoldenrod;
+    right: 220px;
+    bottom: 45px;
+    font-size: 20px;
+}
+
+#submit-button{
+    position: relative;
+    background-color: darkgoldenrod;
+    left: 40px;
+    top: 10px;
+    font-size: 20px;
+}
+
+#interests{
+    position: relative;
+    top: -15px;
+}

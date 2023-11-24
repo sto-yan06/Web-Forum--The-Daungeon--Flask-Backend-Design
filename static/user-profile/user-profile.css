@@ -1,0 +1,400 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url(/static/ARCADECLASSIC.TTF);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("/static/user-profile/profile-backgroundd.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+
+ nav{
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ }
+
+ nav a{
+    display: inline;
+    flex-direction: column;
+    text-decoration: none;
+    color: gold;
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 5px;
+    margin: 0 10px;
+
+}
+
+
+.wanted-picture{
+    background-color: darkgoldenrod;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: absolute;
+    left: 25px;
+    height: 60%;
+    width: 400px;
+    border-radius: 30px;
+    box-shadow: 5px 12px 10px black;
+    top:150px;
+
+}
+
+/* Next is for profile tab and text together movement */
+.profile-picture{
+    float: left;
+    position: relative;
+    top: -100px;
+    left: 90px;
+}
+
+.avatar-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.avatar-container .profile-picture{
+    margin-top: 10px;
+}
+
+.avatar-container .profile-pic-upload{
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px gray;
+    position: relative;
+    top: 20px;
+    
+}
+
+.avatar-container .profile-pic-upload label {
+    background-color: gold;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'PixelFont', sans-serif;
+    
+}
+
+.avatar-container .profile-pic-upload label:hover {
+    background-color: darkgoldenrod;
+}
+
+.avatar-container .profile-pic-upload label span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.avatar-container .profile-pic-upload input[type="file"]:focus + label {
+    outline: 2px solid darkgoldenrod;
+}
+
+.avatar-container img{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.profile-picture h2{
+    color: gold;
+    font-family: 'PixelFont', sans-serif;
+    background-color: black;
+    width: 200px;
+    height: 30px;
+    text-shadow: 5px 2px 5px black;
+    letter-spacing: 3px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 7px;
+    
+}
+
+
+/* Next is for last tab movement */
+.profile-pic-upload{
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px gray;
+    position: absolute;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    top: 400px;
+    left: 25px;
+}
+
+.profile-pic-upload input[type="file"] {
+    display: none;
+}
+
+.profile-pic-upload label{
+    background-color: gold;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family:'PixelFont', sans-serif;
+    word-spacing: 11px;
+    position: relative;
+    left: 20px;
+}
+
+.profile-pic-upload label:hover{
+    background-color: darkgoldenrod;
+}
+
+.profile-pic-upload label span{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-pic-upload input [type="file"]:focus + label{
+    outline: 2px solid darkgoldenrod;
+}
+
+.profile-pic-upload input [type="submit"]{
+    color: goldenrod;
+}
+
+.upload-button{
+    background-color: gold;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "PixelFont",sans-serif;
+    font-size: 18px;
+    position: relative;
+    top: 20px;
+    left: 100px;
+}
+
+.upload-button:hover{
+    background-color: gold;
+
+}
+
+.upload-button:focus{
+    outline: 2px solid darkgoldenrod;
+}
+
+
+/* Next is for middle tab movement */
+.profile-settings{
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    width: 310px;
+    top: 280px;
+    left: 40px;
+    padding: 2px;
+    height: 85px;
+    border-radius: 35px;
+    box-shadow: 5px 3px 20px gray;
+}
+
+.profile-settings p{
+    color: white;
+    font-family: 'PixelFont',sans-serif;
+    word-spacing: 10px;
+}
+
+
+.main-container{
+    background-color: rgb(26, 24, 24);
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    margin-top: 2%;
+    left: 27%;
+    border-radius: 20px;
+}
+
+
+/* GENERAL THREADS */
+
+
+.thread-list-ordonated{
+    background-color: black;
+    border-radius: 20px;
+    width: 90%;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+    list-style: none;
+    margin-bottom: 30px;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    padding-bottom: 20px;
+    word-spacing: 20px;
+    box-shadow: 8px 14px 25px rgba(41, 40, 39, 0.85);
+
+}
+
+.thread-list-item-text1{
+    color: white;
+    font-family: 'PixelFont';
+    display: inline;
+    font-size: 35px;
+    margin-top: 60px;
+}
+
+.thread-list-item-text2{
+    color: gold;
+    font-family: 'PixelFont';
+    display: inline;
+    font-size: 25px;
+    margin-top: 60px;
+    text-decoration: none;
+}
+
+.thread-list-item-text3{
+    color: white;
+    font-family: 'PixelFont';
+    display: inline;
+    font-size: 20px;
+    margin-top: 60px;
+}
+ /* GAME TIPS ORDONATED LIST */
+
+
+.tips-thread-list-ordonated{
+    background-color: rgb(41, 16, 4);
+    border-radius: 20px;
+    width: 90%;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+    list-style: none;
+    margin-bottom: 30px;
+    position: relative;
+    top: 120px;
+    left: 50px;
+    padding-bottom: 20px;
+    word-spacing: 20px;
+    box-shadow: 8px 14px 25px rgba(59, 32, 18, 0.85);
+}
+
+.tips-thread-list-item-text1{
+    color: white;
+    font-family: 'PixelFont';
+    display: inline;
+    font-size: 35px;
+}
+
+.tips-thread-list-item-text2{
+    color: gold;
+    font-family: 'PixelFont';
+    display: inline;
+    text-decoration: none;
+    font-size: 25px;
+
+}
+
+.tips-thread-list-item-text3{
+    color: white;
+    font-family: 'PixelFont';
+    display: inline;
+    font-size: 20px;
+}
+
+/* PAGINATION GENERAL DISCUSSION*/
+
+.pagination_gd{
+    color: black;
+    font-family: 'PixelFont', sans-serif;
+    font-size: 50px;
+    background-color: darkgoldenrod;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    padding: 5px;
+    text-align: center;
+    border-radius: 15px;
+    top: 305px;
+    left: 20px;
+    word-spacing: 15px;
+
+}
+
+.pagination_gd a{
+    text-decoration: none;
+    color: black;
+}
+
+.pagination_gd a:visited{
+    text-decoration: none;
+}
+
+
+/* PAGINATION GAME TIPS*/
+
+.pagination_gt{
+    color: black;
+    font-family: 'PixelFont', sans-serif;
+    font-size: 50px;
+    background-color: darkgoldenrod;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    padding: 5px;
+    text-align: center;
+    border-radius: 15px;
+
+    bottom: 20px;
+    left: 20px;
+
+}
+
+.pagination_gt a{
+    text-decoration: none;
+    color: black;
+}
+
+.pagination_gt a:visited{
+    text-decoration: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .containerr{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .wanted-picture{
+        display: none;
+    }
+
+    .main-container{
+        position: static;
+        width: 100%;
+        margin: 10px auto;
+    }
+}

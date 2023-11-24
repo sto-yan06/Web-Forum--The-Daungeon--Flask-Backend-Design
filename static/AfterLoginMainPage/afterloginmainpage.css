@@ -1,0 +1,188 @@
+/* Reset default margins and paddings */
+@font-face {
+    font-family: 'PixelFont';
+    src: url(/static/ARCADECLASSIC.TTF);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color with a pixel pattern or texture */
+body {
+    background: url('/static/restbackground.png');
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-color: #000; /* Fallback background color */
+    background-attachment: fixed;
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+}
+
+/* Style the header */
+header {
+    background-color: #333; /* Dark gray background */
+    padding: 20px;
+    text-align: center;
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #FFD700; /* Gold text color */
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+    text-shadow: 5px 3px 3px black;
+}
+
+/* Style the navigation bar */
+nav {
+    text-align: right;
+    background-color: #444; /* Slightly lighter gray */
+    font-family: 'PixelFont', sans-serif;
+    font-size: 25px;
+    word-spacing: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFD700; /* Gold text color */
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+}
+
+/* Style the main content */
+main {
+    padding: 20px;
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+    display: flex;
+    position: relative;
+    top: 100px;
+    flex-direction: column;
+}
+
+/* Style forum categories */
+.category {
+    background-color: #333; /* Dark gray background */
+    padding: 25px;
+    margin: 20px;
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+    border-radius: 30px;
+    position: relative;
+    bottom: 80px;
+}
+
+.category h2 {
+    font-size: 18px;
+    color: rgb(189, 85, 21); /* Gold text color */
+    font-family: 'PixelFont', sans-serif;
+    font-size: 50px;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+    text-shadow: 5px 5px 3px black;
+}
+
+/* Style topic listings */
+.topic-list li {
+    margin: 10px 0;
+    border-bottom: 1px solid #555; /* Darker gray border */
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+}
+
+.topic-list h3 {
+    font-size: 16px;
+    color: #FFD700; /* Gold text color */
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+}
+
+.topic-list p {
+    font-size: 14px;
+    color: #DDD; /* Light gray text color */
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #222; /* Even darker gray */
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    color: #DDD; /* Light gray text color */
+    font-family: 'PixelFont', sans-serif;
+    word-spacing: 10px;
+}
+
+.category a {
+    color: rgb(252, 157, 3);
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.category ul{
+    list-style: none;
+}
+
+
+.category-2{
+    background-color: #333; /* Dark gray background */
+    padding: 25px;
+    margin: 20px;
+    align-items: center;
+    font-family: 'PixelFont', sans-serif;
+    width: 350px;
+    word-spacing: 10px;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    bottom: 120px;
+}
+.category-2 .button{
+    font-size: 25px;
+    color: wheat;
+    position: relative;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;
+
+}
+
+.category-2 .button:hover{
+    color: #ccb800;
+}

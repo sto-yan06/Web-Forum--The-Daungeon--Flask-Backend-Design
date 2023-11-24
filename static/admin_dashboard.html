@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/admin_dashboard/admin_dashboard.css"> <!-- Link to your admin dashboard styles -->
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <p class="capitalize">Welcome, {{admin_name}}!</p>
+        <a href="/" class="home-button">Home</a>
+    </header>
+
+    <section class="overview">
+        <h2>Overview</h2>
+        <div class="stats">
+            <div class="stat-box">
+                <h3>Total Users</h3>
+                <p>{{ users|length }}</p> <!-- Display the total number of users -->
+            </div>
+            <div class="stat-box">
+                <h3>Total Posts</h3>
+                <p>{{ threads|length }}</p> <!-- Display the total number of posts (threads) -->
+            </div>
+        </div>
+    </section>
+
+    <section class = "user-management">
+        <h2>User Management</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through users and display them in the table -->
+                {% for user in users %}
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td>{{ user[3] }}</td>
+                    <td  class="action">
+                        <a href="/admin/edit-user/{{ user[0] }}" class="management-buttons-edit">Edit</a>
+                        <a href="/admin/delete-user/{{ user[0] }}" onclick="openConfirmationDialog('{{ user[0] }}')" class="management-buttons-delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="content-management">
+        <h2>Content Management</h2>
+        <!-- Display content management features and controls here -->
+    
+        <div class="content-list">
+            <h3>List of Threads and Posts</h3>
+            <ul>
+                <!-- Loop through threads and display them in the list -->
+                {% for thread in threads %}
+                <li>
+                    <span>Title: {{ thread[1] }}</span>
+                    <span>Author: {{ thread[3] }}</span>
+                    <span>Date: {{ thread[4] }}</span>
+                    <a href="/admin/edit-content/{{ thread[0] }}">Edit</a>
+                    <a href="/admin/delete-content/{{ thread[0] }}">Delete</a>
+                </li>
+                {% endfor %}
+                
+                <!-- Loop through game_tips_threads and display them in the list -->
+                {% for game_tips_thread in game_tips_threads %}
+                <li>
+                    <span>Title: {{ game_tips_thread[1] }}</span>
+                    <span>Author: {{ game_tips_thread[3] }}</span>
+                    <span>Date: {{ game_tips_thread[4] }}</span>
+                    <a href="/admin/edit-content/{{ game_tips_thread[0] }}">Edit</a>
+                    <a href="/admin/delete-content/{{ game_tips_thread[0] }}">Delete</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+       
+</body>

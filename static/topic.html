@@ -1,0 +1,92 @@
+<!-- topic.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Page</title>
+    <link rel="stylesheet" href="/static/topic-page/topic-page.css"> <!-- Link to your topic page's CSS file -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+
+    <a href="/" class="home">Home</a>
+
+<div class="main-container">
+    <main>
+
+        {% if topic %}
+        <h2>{{ topic[0] }}</h2> <!-- Assuming the first element in the tuple is the title -->
+        <p class="content">{{ topic[1] }}</p> <!-- Assuming the second element in the tuple is the content -->
+        <p class="author">Author:</p> <!-- Assuming the third element in the tuple is the author -->
+        <p class="author-2">{{ topic[2] }}</p> <!-- Assuming the third element in the tuple is the author -->
+        <p class="created-at">Created at:</p>
+        <p class="created-at-2">{{ topic[3].strftime('%Y-%m-%d %H:%M') }}</p> <!-- Assuming the fourth element in the tuple is the created_at -->
+        {% endif %}
+
+
+        {% if (user_role == "admin" and thread_oppened[0] == 1) or (topic[2] == comment_author) %}
+        <form action="/forum/topic/{{ gd_cat }}/{{ top_id }}/close-thread" method="post">
+            <input type="hidden" name="thread_id" value="{{ thread_id }}">
+            <button type="submit" id="close-thread-button" class="close-button">Close Thread</button>
+        </form>
+        {% endif %}
+
+        <script type="text/javascript">
+            var closeThreadUrl = "{{ url_for('close_thread', category=gd_cat, topic_id=top_id) }}";
+        </script>
+
+
+        <script type="text/javascript">
+        var redirectURL = "{{ url_for('topic', category=gd_cat, topic_id=top_id) }}";
+        </script>
+
+        {% if thread_oppened[0] == 0 %}
+        <script>
+            var threadOpened = "{{ thread_oppened[0] }}";
+        </script>
+        <div id="thread-status">Closed!</div>
+        {% else %}
+        <div id="thread-status">Opened!</div>
+        {% endif %}
+    
+
+        
+    </main>
+</div>
+{% if thread_oppened[0] == 1 %}
+<div class="add-comment-container">
+    <h3>Add a Comment:</h3>
+    <div class="add-comment-items">
+        <form action="/forum/topic/{{ gd_cat }}/{{ top_id }}/add-comment" method="POST" class="add-comment">
+            <textarea id="comment-content" name="comment-content" rows="4" required class="comm-area"></textarea>
+            <input type="submit" id="postCommentButton" value="Post Comment" class="add-comm-button">
+        </form>
+    </div>  
+</div>
+{% endif %}
+
+<div class="comments-container">
+    <h5>Comments:</h5>
+    {% for decrypted_comment in decrypted_comments %}
+        <div class="actual-comment-container">
+            <div class="comm-avatar-container">
+                {% if profile_pict[loop.index0] %}
+                    <img src="{{ profile_pict[loop.index0] }}" alt="Profile Picture">
+                {% else %}
+                    <img src="/static/background.jpg" alt="Default Picture">
+                {% endif %}
+            </div>
+            <p class="author-of-the-comment">User: {{ comment_data[loop.index0].author }}</p>
+            <p class="comment-text">Comment: {{ decrypted_comment.decrypted_comment }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/topic-page/topic-page.js"></script>
+</body>
+</html>

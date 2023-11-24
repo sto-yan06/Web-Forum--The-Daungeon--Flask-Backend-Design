@@ -1,0 +1,326 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url(/static/ARCADECLASSIC.TTF);
+}
+
+body{
+    background-image: url("/static/user-profile/profile-backgroundd.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main-container{
+    background-color: rgb(27, 27, 27);
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 100px;
+    margin-top: 5%;
+    border-radius: 30px;
+    
+}
+
+main h2{
+    color: darkgoldenrod;
+    text-align: center;
+    font-family: 'PixelFont',sans-serif;
+    font-size: 35px;
+    word-spacing: 20px;
+    letter-spacing: 4px;
+}
+
+main p{
+    color: wheat;
+
+}
+
+.content{
+    background-color: rgb(43, 41, 41);
+    color:gold;
+    font-size: 30px;
+    position: absolute;
+    border: 5px solid wheat;
+    width: 80%;
+    height: 75%;
+    left: 17%;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 200%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.author{
+    position: absolute;
+    color: gold;
+    left: 50px;
+    font-family: 'PixelFont';
+    font-size: 22px;
+    top: 300px;
+
+}
+
+.author-2{
+    position: absolute;
+    color: gold;
+    left: 40px;
+    font-family: 'PixelFont';
+    font-size: 22px;
+    top: 335px;
+
+}
+
+.created-at{
+    position: absolute;
+    color: gold;
+    font-family: 'PixelFont', sans-serif;
+    font-size: 20px;
+    top: 650px;
+    left: 30px;
+    word-spacing: 15px;
+
+}
+.created-at-2{
+    position: absolute;
+    color: gold;
+    font-family: 'PixelFont', sans-serif;
+    font-size: 20px;
+    top: 680px;
+    left: 30px;
+    word-spacing: 10px;
+
+}
+
+.home{
+    position: absolute;
+    color: gold;
+    font-family: 'PixelFont', sans-serif;
+    font-size: 20px;
+    top: 20px;
+    left: 20px;
+    word-spacing: 10px;
+    text-decoration: none;
+    background-color: rgb(43, 41, 41);
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 20px;
+    font-size: 30px;
+}
+
+
+#message-container {
+    position: fixed;
+    top: 0;
+    left: 8%;
+    width: 80%;
+    background-color: #4CAF50; /* Background color for the message */
+    color: white; /* Text color for the message */
+    text-align: center;
+    padding: 20px;
+    transition: top 0.5s ease-in-out; /* Slide up effect */
+    border-radius: 20px;
+}
+
+#message {
+    font-size: 35px;
+    font-family: 'PixelFont', sans-serif;
+    text-shadow: 2px 2px 2px black;
+}
+
+.show{
+    top:0;
+}
+
+#message-container {
+    opacity: 0;
+}
+
+#message-container.show {
+    animation: none;
+}
+
+.main-container #thread-status{
+    background-color: #4CAF50;
+    width: 6%;
+    text-align: center;
+    border-radius: 20px;
+    height: 2%;
+    position: relative;
+    padding: 10px;
+    top: -70px;
+    left: 1400px;
+    font-family: 'PixelFont', sans-serif;
+    font-size: 22px;
+    word-spacing: 12px;
+    color: white;
+    box-shadow: 2px 2px 15px gray;
+}
+
+.add-comment-container{
+    background-color: gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    
+
+}
+
+.comments-container {
+    margin-top: 20px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    
+}
+
+/* CSS for the comments container */
+.add-comment-container {
+    
+    background-color: rgb(43, 41, 41);
+    width: 1170px;
+    border-radius: 30px;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 15%;
+    top: 950px;
+    position: absolute;
+}
+
+.add-comment-container h3{
+    text-align: center;
+    position: relative;
+    right: 450px;
+    top: 42px;
+    color: goldenrod;
+}
+
+.add-comment-items{
+    text-align: center;
+}
+
+
+.comments-container{
+    background-color: rgb(27, 27, 27);
+    width: 90%;
+    border-radius: 30px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1130px
+    
+}
+
+.comments-container h5{
+    color: white;
+    font-size: 35px;
+    font-family: 'PixelFont';
+    text-align: center;
+    letter-spacing: 5px;
+    text-shadow: 5px 5px 15px gray; 
+    
+}
+
+.actual-comment-container{
+    background-color: wheat;
+    z-index: 999;
+    position: relative;
+    background-color: rgb(43, 41, 41);
+    border-radius: 200px;
+    text-align: center;
+    color: darkgoldenrod;
+    margin-bottom: 25px;
+    width: 97%;
+    left: 23px;
+    overflow-wrap: break-word;
+}
+
+
+.comment-text{
+    max-width: 1200px; /* Set a maximum width for the comment text */
+  margin: 4px auto; /* Add margin around the comment text */
+  margin-bottom: 30px;
+  overflow-wrap: break-word;
+  color: gold;
+}
+
+
+.close-button{
+    background-color: darkmagenta;
+    font-family: 'PixelFont';
+    word-spacing: 4px;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 3px 4px 15px black;
+    top: 35px;
+    left: 25px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.add-comm-button{
+    background-color: darkmagenta;
+    font-family: 'PixelFont';
+    word-spacing: 4px;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 3px 4px 15px black;
+    top: 60px;
+    left: 870px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.comm-area{
+    position: relative;
+    width: 600px;
+    height: 80px;
+    bottom: 30px;
+    border-radius: 20px;
+    right: 50px;
+    resize: none;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    font-size: 20px;
+    cursor: default;
+}
+
+
+
+.red-closed {
+    background-color: #FF0000; /* Red for closed threads */
+}
+
+.green-opened {
+    background-color: #4CAF50; /* Green for open threads */
+}
+
+.comm-avatar-container {
+    display: flex;
+    justify-content:space-between; /* Horizontally center the content */
+    align-items:last baseline; /* Vertically center the content */
+    height: 100px; /* Set the height of the container */
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.comm-avatar-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px gray;
+}
+
+.author-of-the-comment{
+    margin-top: -80px;
+}
