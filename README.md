@@ -1,4 +1,5 @@
 I don't own any of the assets ( images, sounds, fonts) used on the creation of the Frontend.
+
 © All rights reserved for the Python, CSS, HTML and Js files.
 
 # Daungeon Forum 
