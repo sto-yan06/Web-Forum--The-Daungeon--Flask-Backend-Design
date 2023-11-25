@@ -8,7 +8,7 @@ This is a Web Forum which has a Pixel-Art Style. It was made only for practice p
 It works as well as a CRUD application where you have a relational MySQL Database. 
 
 
-A new user can:
+A user can:
   1. Register / (Login in case of already existing user)
   2. Post a thread.
   3. Post a comment on a thread.
