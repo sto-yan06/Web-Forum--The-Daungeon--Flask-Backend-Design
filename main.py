@@ -19,10 +19,10 @@ ROLES = {
     "admin": ['view_thread', 'create_thread', 'comment_thread', 'delete_thread']
 }
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '!rootuser123!'
-app.config['MYSQL_DB'] = 'daungeon'
+app.config['MYSQL_HOST'] = # YOUR PRIVATE INFO
+app.config['MYSQL_USER'] = # YOUR PRIVATE INFO
+app.config['MYSQL_PASSWORD'] = # YOUR PRIVATE INFO
+app.config['MYSQL_DB'] = # YOUR PRIVATE INFO
 
 app.config['THREADS_PER_PAGE'] = 3
 
