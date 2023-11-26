@@ -1,6 +1,6 @@
 I don't own any of the assets ( images, sounds, fonts) used on the creation of the Frontend.
 
-© All rights reserved for the Python, CSS, HTML and Js files.
+© All rights reserved for the Python, CSS, HTML, SQL and Js files.
 
 # Daungeon Forum 
 This is a Web Forum which has a Pixel-Art Style. It was made only for practice purpose and the actual main script it's the whole back-end engineering. It fetches data from database and manipulate it. It works as well as a CRUD application.
